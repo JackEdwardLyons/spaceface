@@ -78,11 +78,11 @@ section {
   width: auto;
 }
 
-[class^="js-zoom"] {
+.js-zoom {
   font-family: "flama_condensed_semiboldSBd";
   letter-spacing: 2px;
-  font-size: 40px;
-  transition: all .3s;
+  font-size: 25px;
+  transition: all 2s;
 }
 
 /* The Modal (background) */
@@ -129,7 +129,7 @@ section {
 }
 
 .modal-img {
-  width: 80%;
+  width: 60%;
   max-width: 300px;
 }
 
@@ -212,7 +212,7 @@ a:hover {
     top: -4em;
   }
   .js-zoom {
-    font-size: 3.5em;
+    /* font-size: 3.5em; */
   }
   .js-zoom > span {
     left: 0;
@@ -231,7 +231,17 @@ a:hover {
   .mbr-box__container {
     height: auto;
   }
+  .m-b-hero-3 {
+    margin-bottom: 3em;
+  }
 }
+
+@media screen and (min-width: 768px) {
+  .m-t-hero-4 {
+    margin-top: 4em;
+  }
+}
+
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .navbar__items {
@@ -247,12 +257,12 @@ a:hover {
     position: relative;
     bottom: 8em;
   }
-  .js-zoom > span {
+  /* .js-zoom > span {
     left: 10%;
     position: relative;
-  }
+  } */
   .js-zoom {
-    font-size: 3em;
+    /* font-size: 3em; */
   }
 }
 
