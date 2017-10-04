@@ -1,0 +1,279 @@
+/** 
+ * Additional Custom CSS 
+ * ----------------------
+ * Edit this file for misc. CSS changes.
+ * ---------------------------------------
+ **/
+
+.navbar-dropdown.bg-color.transparent,
+#dropdown-menu-0 .navbar,
+#dropdown-menu-0 .dropdown-menu {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler {
+  position: relative;
+  top: 12px;
+}
+
+.white-text {
+  color: #FFF;
+}
+
+.what-we-do {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+section {
+  position: relative;
+}
+
+.team-head {
+  width: 100%;
+  height: auto;
+}
+
+.team-head__leo {
+  background: url('../../images/spaceface-leo.png');
+}
+
+.team-head__tim {
+  background: url('../../images/spaceface-tim.png');
+}
+
+.team-head__matt {
+  background: url('../../images/spaceface-matt.png');
+}
+
+.team-head__text {
+  font-size: 40px;
+  font-family: "flama_condensed_semiboldSBd";
+  position: relative;
+}
+
+.footer-text-large {
+  font-size: 25px;
+}
+
+.footer-text-small {
+  font-size: 15px;
+}
+
+.spaced-text {
+  letter-spacing: 15px;
+}
+
+.hero-text {
+  font-size: 30px;
+  font-family: "flama_condensed_semiboldSBd";
+}
+
+/* Parallax Zoom */
+#zoom-1 {
+  background: url(../../images/quote-one.png); 
+  background-size: cover;  
+  height: 20%;
+  position: relative;
+  width: auto;
+}
+
+[class^="js-zoom"] {
+  font-family: "flama_condensed_semiboldSBd";
+  letter-spacing: 2px;
+  font-size: 40px;
+  transition: all .3s;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-link__text:hover {
+  transform: scale(1.1);
+  transition: .3s ease;
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: transparent;
+  margin: 5%;
+  padding: 20px;
+  position: relative;
+  box-shadow: none;
+}
+
+.modal-content.leo {
+  float: left;
+  margin-left: 4%;
+}
+
+.modal-content.tim {
+  margin: 5% auto;
+}
+
+.modal-content.matt {
+  float: right;
+  margin-right: 4%;
+}
+
+.modal-img {
+  width: 80%;
+  max-width: 300px;
+}
+
+.modal-text {
+  font-size: 1em;
+  text-align: left;
+  padding-top: 1em;
+}
+
+.close-modal,
+.modal-text,
+.what-we-do {
+  font-family: 'monostene';
+}
+
+.close-modal__text {
+  font-size: 1.25em;
+}
+
+.title-overlay-leo {
+  padding-top: 95px;
+  right: 6px;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-link {
+  text-transform: uppercase;
+}
+
+.hero-image {
+  right: 5%;
+}
+
+.top-pad-15 {
+  position: relative;
+  top: 15%;
+}
+
+
+@media screen and (min-width: 768px) {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+  .modal-content {
+    width: 33.3%;
+  }
+  .spaceface-logo {
+    width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .hero-image {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: -4em;
+  }
+  .js-zoom {
+    font-size: 3.5em;
+  }
+  .js-zoom > span {
+    left: 0;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal-content {
+    width: auto;
+    margin: 5% auto;
+  }
+  .hero-image {
+    top: 0;
+  }
+  .mbr-box__container {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .navbar__items {
+    padding: 0;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+  .hero-image {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    bottom: 8em;
+  }
+  .js-zoom > span {
+    left: 10%;
+    position: relative;
+  }
+  .js-zoom {
+    font-size: 3em;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .m-t-1 {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  i.fa-2x {
+    font-size: 1em !important;
+  }
+  .nav-link.link {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.pad-1 {
+  padding: 1em;
+}
+.pad-b-3 {
+  padding-bottom: 3em;
+}
