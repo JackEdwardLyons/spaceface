@@ -66,25 +66,24 @@
       });
     } // end addModal()
 
+  
+    /* Quote Zoom Effects
+     * --------------------- */
 
-    
-    /*
-     * CSS Hack for modal 
-     * ------------------- */
-
-     
-  
-  
-  
     updateZoom = function(index, element) {
       var $header = $(element),
           distanceFromTopOfViewport = Math.min(100, Math.abs( ($header.offset().top - 100) - $(document).scrollTop()));
           console.log( 'header: ',  Math.abs($header.offset().top - $(document).scrollTop()), 'dist from vp:', distanceFromTopOfViewport)
           console.log('header offset: ', $header.offset().top)
       
-      $header.css({
-          zoom: 2.5 - distanceFromTopOfViewport / 300
-      });
+          if ( $(window).width() > 765 ) {
+            $header.css({
+              zoom: 2.5 - distanceFromTopOfViewport / 300
+            });
+          } else {
+            $header.css({ zoom: 1 });
+          }
+      
     };
   
     $(document).ready(function () {
@@ -94,10 +93,8 @@
     $(document).scroll(function () {
         $(".js-zoom").each(updateZoom);
     });
-  
-  
-    // /* Quote Zoom Effects
-    //  * --------------------- */
+
+
     // (function () {
   
     //   zoomEffect('.js-zoom-1', 700, 1380, 15);
@@ -172,7 +169,7 @@
 
       if ( $scroll > $maxScroll) $x = $maxScale;
 
-      if ( $(window).width() > 1000 && $scroll ) {
+      if ( $(window).width() > 1500 && $scroll ) {
         $('.hero-image').css({
           transform: 'scale(' + ( $x ) + ')'
         });
@@ -185,13 +182,12 @@
     });
   
     
-  
     /*
      * Scroll Fix 
      * ----------- */
   
     $(document).ready(function() {
-      console.log( $(window).width() )
+
       $('a[href^="#"]').click(function() {
           var target = $(this.hash);
           if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
@@ -199,7 +195,7 @@
           
           if ( $(window).width() > 1900) {
             
-            $('html, body').animate({ scrollTop: target.offset().top - 340 }, 1000);
+            $('html, body').animate({ scrollTop: ( target.offset().top - $(window).height()/2 )}, 1000);
           } else {
             $('html, body').animate({ scrollTop: target.offset().top - 100 }, 1000);
           }

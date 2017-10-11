@@ -32,6 +32,11 @@ section {
 .team-head {
   width: 100%;
   height: auto;
+  transition: .3s ease-in-out;
+}
+
+.team-head:hover {
+  transform: scale(1.2);
 }
 
 .team-head__leo {
@@ -81,7 +86,7 @@ section {
 .js-zoom {
   font-family: "flama_condensed_semiboldSBd";
   letter-spacing: 2px;
-  font-size: 25px;
+  font-size: 30px;
   transition: all 2s;
 }
 
@@ -183,23 +188,27 @@ a:hover {
 .hero-image {
   right: 5%;
 }
-
+/* 
 .top-pad-15 {
   position: relative;
   top: 15%;
-}
+} */
 
 
 @media screen and (min-width: 768px) {
   .flex-center {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .modal-content {
     width: 33.3%;
   }
   .spaceface-logo {
     width: 80%;
+  }
+  #hover-section, #header4-a {
+    height: 100vh;
   }
 }
 
@@ -210,9 +219,6 @@ a:hover {
     margin: 0 auto;
     position: relative;
     top: -4em;
-  }
-  .js-zoom {
-    /* font-size: 3.5em; */
   }
   .js-zoom > span {
     left: 0;
