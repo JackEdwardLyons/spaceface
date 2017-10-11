@@ -135,9 +135,17 @@
       var target = $(this.hash);
       if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
       if (target.length == 0) target = $('html');
-      $('html, body').animate({
-        scrollTop: target.offset().top - 200
-      }, 1000);
+
+      if ( $(window).width() > 1600) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 400
+        }, 1000);
+      } else {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 200
+        }, 1000);
+      }
+      
       return false;
     });
   });
