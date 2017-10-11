@@ -240,10 +240,6 @@ a:hover {
     position: relative;
     top: -4em;
   }
-  .js-zoom > span {
-    left: 0;
-    position: relative;
-  }
 }
 
 @media screen and (max-width: 767px) {
