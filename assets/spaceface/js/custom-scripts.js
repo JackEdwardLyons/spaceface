@@ -73,13 +73,19 @@
     updateZoom = function(index, element) {
       var $header = $(element),
           distanceFromTopOfViewport = Math.min(100, Math.abs( ($header.offset().top - 100) - $(document).scrollTop()));
-          console.log( 'header: ',  Math.abs($header.offset().top - $(document).scrollTop()), 'dist from vp:', distanceFromTopOfViewport)
-          console.log('header offset: ', $header.offset().top)
+          // console.log( 'header: ',  Math.abs($header.offset().top - $(document).scrollTop()), 'dist from vp:', distanceFromTopOfViewport)
+          // console.log('header offset: ', $header.offset().top)
       
           if ( $(window).width() > 765 ) {
-            $header.css({
-              zoom: 2.5 - distanceFromTopOfViewport / 300
-            });
+            if (navigator.userAgent.indexOf("Firefox") > 0) {
+              $header.css({
+                transform: 'scale(' + (2 - distanceFromTopOfViewport / 300) + ')'
+              });
+            } else {
+              $header.css({
+                zoom: 2.5 - distanceFromTopOfViewport / 300
+              });
+            }
           } else {
             $header.css({ zoom: 1 });
           }
@@ -95,67 +101,6 @@
     });
 
 
-    // (function () {
-  
-    //   zoomEffect('.js-zoom-1', 700, 1380, 15);
-    //   zoomEffect('.js-zoom-2', 2800, 3550, 20);
-    //   zoomEffect('.js-zoom-3', 4100, 4700, 30);
-  
-    //   function zoomEffect(element, docMin, docMax, screenDivide) {
-  
-    //     var previousScroll = 0;
-    //     var zoomFont = $(element);
-    //     var docWidth = $(document).width();
-  
-    //     $(window).scroll(function () {
-  
-    //       var currentScroll = $(this).scrollTop();
-    //       var multiplier;
-  
-    //       console.log('scroll: ', currentScroll);
-  
-    //       if (currentScroll > docMin && currentScroll < docMax) {
-  
-    //         zoomFont.css('font-size', '40px');
-    //         multiplier = (currentScroll / screenDivide);
-  
-    //         function checkFontSize() {
-  
-    //           function correctHeadingSize(multiplerSize, fontSize) {
-    //             if (multiplier < multiplerSize) {
-    //               zoomFont.css({
-    //                 'font-size': (multiplier) + 'px'
-    //               });
-    //             } else {
-    //               zoomFont.css({
-    //                 'font-size': fontSize
-    //               });
-    //             }
-    //           } // end correctHeadingSize()
-  
-    //           if (docWidth > 1300) {
-    //             correctHeadingSize(120, '80px');
-    //           } else if (docWidth > 1100) {
-    //             correctHeadingSize(100, '80px');
-    //           }
-  
-    //         } // end checkFontSize() 
-  
-    //         if (currentScroll > previousScroll) {
-    //           // going down
-    //           checkFontSize();
-    //         } else {
-    //           // going up
-    //           checkFontSize();
-    //         }
-  
-    //         previousScroll = currentScroll;
-    //       }
-  
-    //     });
-    //   } // end zoomEffect() 
-    // }()); // end zoom scroll
-  
     /* 
       * Header Zoom Effect 
       * ------------------- */
@@ -169,7 +114,7 @@
 
       if ( $scroll > $maxScroll) $x = $maxScale;
 
-      if ( $(window).width() > 1500 && $scroll ) {
+      if ( $(window).width() > 1200 && $scroll ) {
         $('.hero-image').css({
           transform: 'scale(' + ( $x ) + ')'
         });
@@ -181,25 +126,17 @@
 
     });
   
-    
+      
     /*
-     * Scroll Fix 
-     * ----------- */
-  
-    $(document).ready(function() {
+    * Srcoll Fix 
+    * ----------- */
 
+    $(document).ready(function() {
       $('a[href^="#"]').click(function() {
           var target = $(this.hash);
           if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
           if (target.length == 0) target = $('html');
-          
-          if ( $(window).width() > 1900) {
-            
-            $('html, body').animate({ scrollTop: ( target.offset().top - $(window).height()/2 )}, 1000);
-          } else {
-            $('html, body').animate({ scrollTop: target.offset().top - 100 }, 1000);
-          }
-         
+          $('html, body').animate({ scrollTop: target.offset().top - 200 }, 1000);
           return false;
       });
     });
