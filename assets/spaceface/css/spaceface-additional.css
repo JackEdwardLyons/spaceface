@@ -94,8 +94,20 @@ section {
 .js-zoom {
   font-family: "flama_condensed_semiboldSBd";
   letter-spacing: 2px;
-  font-size: 25px;
+  font-size: 14pt;
   transition: all 2s;
+}
+
+.medium-quote {
+  font-size: 21pt;
+}
+
+.large-quote {
+  font-size: 23pt;
+}
+
+.push-left {
+  margin-left: 12%;
 }
 
 /* The Modal (background) */
